@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="10">
+    <title>healthMonitor</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>healthMonitor</h1>
+<ul>
+    <% endpoints.forEach(function(endpoint){%>
+    <li>id: <%=endpoint.id %>, Sequence : <%=endpoint.sequence %>, Url : <%=endpoint.url %> , contact : <%=endpoint.name %></li>
+    <% }) %>
+</ul>
+<div>
+    <a href="/addEndpoint" class="btn btn-info"><strong>Add Endpoint</strong></a>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>

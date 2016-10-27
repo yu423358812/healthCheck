@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>healthMonitor</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>Add Endpoints</h1>
+<form action="/addEndpoint" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control form-control-sm" id="name" placeholder="name" name="name" value=''>
+    </div>
+    <div class="form-group">
+        <label for="url">Url</label>
+        <input type="text" class="form-control form-control-sm" id="url" placeholder="url" name="url" value=''>
+    </div>
+    <div class="form-group">
+        <label for="sequence">Sequence</label>
+        <input type="text" class="form-control form-control-sm" id="sequence" placeholder="sequence" name="sequence" value=''>
+    </div>
+    <div class="form-group">
+        <label for="port">Port</label>
+        <input type="text" class="form-control form-control-sm" id="port" placeholder="port" name="port" value=''>
+    </div>
+    <div class="form-group">
+        <label for="body">Body</label>
+        <input type="text" class="form-control form-control-sm" id="body" placeholder="body" name="body" value=''>
+    </div>
+    <div class="form-group">
+        <label for="header">Header</label>
+        <input type="text" class="form-control form-control-sm" id="header" placeholder="header" name="header" value=''>
+    </div>
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>
