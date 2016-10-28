@@ -2,26 +2,31 @@ var express = require('express');
 var router = express.Router();
 var fs = require("fs");
 var https=require('https');
-
+// mongodb model
 var endpoint=require('../Dao/endpoint');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    var c=1;
+    res.render('index');
+});
 
-    if (req.cookies.isVisit) {
-        console.log(req.cookies.isVisit);
-        var c= parseInt(req.cookies.isVisit) + 1;
-        res.cookie('isVisit', c, {maxAge: 60 * 1000});
-    } else {
-        res.cookie('isVisit', 1, {maxAge: 60 * 1000});
-    }
+// homepage controller
+router.get('/indexController', function(req, res) {
+    // var c=1;
+    //
+    // if (req.cookies.isVisit) {
+    //     console.log(req.cookies.isVisit);
+    //     var c= parseInt(req.cookies.isVisit) + 1;
+    //     res.cookie('isVisit', c, {maxAge: 60 * 1000});
+    // } else {
+    //     res.cookie('isVisit', 1, {maxAge: 60 * 1000});
+    // }
 
     endpoint.find({},function(err,doc){
         if(err){
             res.send(err);
         }else{
-            res.render('index',{endpoints: doc, count: c});
+            res.send(JSON.stringify(doc));
         }
     });
 
@@ -64,14 +69,14 @@ router.get('/', function(req, res) {
 router.get('/addEndpoint', function(req, res){
     res.render("addEndpoint");
 });
-router.post('/addEndpoint', function(req, res){
-    var newEndpoint=req.body;
+router.post('/addEndpointController', function(req, res){
+    var newEndpoint=req.body.data;
     console.log(newEndpoint);
     endpoint.create(newEndpoint, function(err,doc){
         if(err) {
             console.log(err);
         } else {
-            res.redirect("addEndpoint");
+            res.send("success");
         }
     });
 });
