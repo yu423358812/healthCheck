@@ -7,12 +7,21 @@ var endpoint=require('../Dao/endpoint');
 
 /* GET home page. */
 router.get('/', function(req, res) {
+    var c=1;
+
+    if (req.cookies.isVisit) {
+        console.log(req.cookies.isVisit);
+        var c= parseInt(req.cookies.isVisit) + 1;
+        res.cookie('isVisit', c, {maxAge: 60 * 1000});
+    } else {
+        res.cookie('isVisit', 1, {maxAge: 60 * 1000});
+    }
 
     endpoint.find({},function(err,doc){
         if(err){
             res.send(err);
         }else{
-            res.render('index',{endpoints: doc});
+            res.render('index',{endpoints: doc, count: c});
         }
     });
 
