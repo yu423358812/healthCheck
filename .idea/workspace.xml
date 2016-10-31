@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a376fc5-66ca-46a9-b4ba-7f63ab169c49" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/addEndpoint.ejs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="healthCheckMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="endpointsView.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="endpointsView.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/endpointsView.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="600">
               <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,6 +160,7 @@
         <option value="$PROJECT_DIR$/views/home.ejs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/endpointsView.ejs" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -387,7 +397,7 @@
       <workItem from="1477600320681" duration="670000" />
       <workItem from="1477601009765" duration="249000" />
       <workItem from="1477601276817" duration="77227000" />
-      <workItem from="1477953730886" duration="602000" />
+      <workItem from="1477953730886" duration="1468000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1477953749520</created>
@@ -396,11 +406,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477953749520</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new">
+      <created>1477954339382</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1477954339382</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101883000" />
+    <option name="totallyTimeSpent" value="102749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -764,8 +781,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/endpointsView.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="600">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
