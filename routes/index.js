@@ -3,76 +3,31 @@ var router = express.Router();
 var fs = require("fs");
 var https=require('https');
 // mongodb model
-var endpoint=require('../Dao/endpoint');
+var endpointTable=require('../Dao/endpointTable');
+var appTable=require('../Dao/appTable');
+var jobsTable=require('../Dao/jobsTable');
 
-/* GET home page. */
-router.get('/', function(req, res) {
-    res.render('index');
+
+// home.ejs
+router.get('/home', function(req, res){
+            res.render("home");
 });
 
-// homepage controller
-router.get('/indexController', function(req, res) {
-    // var c=1;
-    //
-    // if (req.cookies.isVisit) {
-    //     console.log(req.cookies.isVisit);
-    //     var c= parseInt(req.cookies.isVisit) + 1;
-    //     res.cookie('isVisit', c, {maxAge: 60 * 1000});
-    // } else {
-    //     res.cookie('isVisit', 1, {maxAge: 60 * 1000});
-    // }
-
-    endpoint.find({},function(err,doc){
+// show apps and owners status
+router.get('/ngShowApp', function(req, res){
+    appTable.find({},function(err,data){
         if(err){
-            res.send(err);
+            console.log(err);
         }else{
-            res.send(JSON.stringify(doc));
+            res.send(JSON.stringify(data));
         }
     });
-
-  // var data = fs.readFileSync('./json/endpoints.json');
-  // var endpoints=JSON.parse(data).endpoints;
-  // checkHealth(endpoints);
-
-
-  // function checkHealth(endpoints){
-  //   endpoints.forEach(function (endpoint) {
-  //     monitor(endpoint,function(data){
-  //       res.render("index");
-  //     });
-  //   });
-  // }
-  //
-  // function monitor(endpoint,callback){
-  //   console.log("hello");
-  //   var options={
-  //     'host':'encrypted.google.com',
-  //     'path':'/',
-  //     'method':endpoint.method
-  //   };
-  //
-  //   var request=https.request( options, function(response){
-  //     var body="";
-  //     response.on("data" , function (chunk) {
-  //       body+=chunk.toString('utf8');
-  //     })
-  //     response.on("end" , function () {
-  //       console.log(endpoint.id);
-  //       callback(body);
-  //     })
-  //   });
-  //   request.end();
-  // }
 });
 
-// endpoint form manipulate
-router.get('/addEndpoint', function(req, res){
-    res.render("addEndpoint");
-});
-router.post('/addEndpointController', function(req, res){
-    var newEndpoint=req.body.data;
-    console.log(newEndpoint);
-    endpoint.create(newEndpoint, function(err,doc){
+// add App
+router.post('/ngCreateApp', function(req, res){
+    var addApp=req.body.data;
+    appTable.create(addApp, function(err,data){
         if(err) {
             console.log(err);
         } else {
@@ -80,5 +35,101 @@ router.post('/addEndpointController', function(req, res){
         }
     });
 });
+
+// add Job
+router.post('/ngCreateJob', function(req, res){
+    var addJob=req.body.data;
+    jobsTable.create(addJob, function(err,data){
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("success");
+        }
+    });
+});
+
+// add Api
+router.post('/ngCreateApi', function(req, res){
+    var addApi=req.body.data;
+
+    var endpoint = new endpointTable({
+        appName : addApi.appName,
+        job : addApi.job,
+        createdDate : '',
+        developer : '',
+        status : '',
+        summary : '',
+        endpoints: {
+            id: '',
+            appName: addApi.appName,
+            sequence: addApi.sequence,
+            summary: '',
+            url: addApi.url,
+            method: addApi.method,
+            port: addApi.port,
+            contact: '',
+            contactNo: '',
+            contactEmail: '',
+            status: '',
+            header: '',
+            body: '',
+            response : '',
+            created: '',
+            lastUpdated: '',
+            isJson: '',
+            switch: ''
+        }
+    });
+
+    endpoint.save(function(err,data) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("success");
+        }
+    });
+});
+
+
+// show all endpoints
+router.get('/endpointsView', function(req, res){
+        res.render('endpointsView');
+});
+
+router.get('/ngendpointsView', function(req, res){
+        endpointTable.find({},function(err,data){
+             res.send(JSON.stringify(data));
+        });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
