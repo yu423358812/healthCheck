@@ -9,8 +9,8 @@ var jobsTable=require('../Dao/jobsTable');
 
 
 // home.ejs
-router.get('/home', function(req, res){
-            res.render("home");
+router.get('/', function(req, res){
+            res.render("index");
 });
 
 // show apps and owners status
