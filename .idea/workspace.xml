@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a376fc5-66ca-46a9-b4ba-7f63ab169c49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/package.json" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express/node_modules/accepts/node_modules/negotiator/package.json" afterPath="$PROJECT_DIR$/node_modules/express/node_modules/accepts/node_modules/negotiator/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express/node_modules/array-flatten/package.json" afterPath="$PROJECT_DIR$/node_modules/express/node_modules/array-flatten/package.json" />
     </list>
     <ignored path="healthCheckMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -379,7 +376,7 @@
       <workItem from="1477600320681" duration="670000" />
       <workItem from="1477601009765" duration="249000" />
       <workItem from="1477601276817" duration="77227000" />
-      <workItem from="1477953730886" duration="7777000" />
+      <workItem from="1477953730886" duration="7787000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1477953749520</created>
@@ -458,11 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477961184326</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="new">
+      <created>1477961561315</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1477961561315</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109058000" />
+    <option name="totallyTimeSpent" value="109068000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
